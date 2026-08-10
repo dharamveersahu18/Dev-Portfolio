@@ -1,0 +1,14 @@
+| Element                  | Dark Theme  | Hex         | Light Theme  | Hex         |
+| ------------------------ | ----------- | ----------- | ------------ | ----------- |
+| **Main Background**      | Deep Navy   | `#0B1120`   | Soft White   | `#F8FAFC`   |
+| **Secondary Background** | Dark Blue   | `#111827`   | Light Gray   | `#F1F5F9`   |
+| **Cards / Surface**      | Slate       | `#181A1F`   | White        | `#FFFFFF`   |
+| **Primary Text**         | White       | `#F8FAFC`   | Dark Navy    | `#0F172A`   |
+| **Secondary Text**       | Gray        | `#9CA3AF`   | Slate Gray   | `#475569`   |
+| **Muted Text**           | Dark Gray   | `#6B7280`   | Gray         | `#64748B`   |
+| **Border**               | Dark Border | `#374151`   | Light Border | `#E2E8F0`   |
+| **Primary Accent**       | Orange      | `#F97316`   | Orange       | `#F97316`   |
+| **Accent Hover**         | Dark Orange | `#EA580C`   | Dark Orange  | `#EA580C`   |
+| **Accent Soft**          | Orange Glow | `#F9731620` | Orange Glow  | `#F9731615` |
+| **Success**              | Green       | `#22C55E`   | Green        | `#16A34A`   |
+| **Error**                | Red         | `#EF4444`   | Red          | `#DC2626`   |
