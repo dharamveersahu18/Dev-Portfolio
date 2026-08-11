@@ -1,4 +1,5 @@
 
+import About from "./components/About";
 import BottomNavbar from "./components/BottomNavbar/BottomNavbar";
 import Hero from "./components/Hero";
 
@@ -8,7 +9,10 @@ function App() {
 
       <main>
         {/* Your sections */}
-        
+     
+        <section id="about" className="min-h-screen">
+   <About />
+        </section> 
 
         <section id="home" className="min-h-screen">
       <Hero />
