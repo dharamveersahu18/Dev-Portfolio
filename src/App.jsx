@@ -1,28 +1,25 @@
-
-import About from "./components/About";
-import BottomNavbar from "./components/BottomNavbar/BottomNavbar";
-import Hero from "./components/Hero";
-
+import BottomNavbar from "./components/BottomNavbar/BottomNavbar"
+import Contact from "./components/contact/Contact";
+import Hero from "./components/hero/Hero";
+import About from "./components/about/About"
+import Projects from "./components/projects/Projects"
+import { useState } from "react";
+import Intro from "./components/intro/Intro";
 function App() {
+  const [showIntro, setShowIntro] = useState(true);
+
   return (
-    <div className="min-h-screen bg-[#0B1120] text-white">
-
-      <main>
-        {/* Your sections */}
-     
-        <section id="about" className="min-h-screen">
-   <About />
-        </section> 
-
-        <section id="home" className="min-h-screen">
-      <Hero />
-        </section>
+    <>
+      {showIntro && (
+        <Intro onComplete={() => setShowIntro(false)} />
+      )}
 
       <BottomNavbar />
-        
-      </main>
-
-    </div>
+      <Hero />
+      <About />
+      <Projects />
+      <Contact />
+    </>
   );
 }
 

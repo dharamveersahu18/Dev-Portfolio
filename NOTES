@@ -12,3 +12,9 @@
 | **Accent Soft**          | Orange Glow | `#F9731620` | Orange Glow  | `#F9731615` |
 | **Success**              | Green       | `#22C55E`   | Green        | `#16A34A`   |
 | **Error**                | Red         | `#EF4444`   | Red          | `#DC2626`   |
+Accent       → lime-400
+Gradient     → lime-400 → green-500
+Soft glow    → lime-400/10
+Circle glow  → lime-400/20
+Hover        → lime-400
+Background   → #0b0d10
