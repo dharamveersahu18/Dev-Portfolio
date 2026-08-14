@@ -15,6 +15,7 @@ import {
   FaDiscord,
   FaYoutube,
 } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 function BottomNavbar() {
   const [darkMode, setDarkMode] = useState(true);
@@ -28,17 +29,17 @@ function BottomNavbar() {
     {
       name: "Home",
       icon: <Home size={20} />,
-      href: "#home",
+      href: "/",
     },
     {
       name: "Projects",
       icon: <FolderKanban size={20} />,
-      href: "#projects",
+      href: "/projects",
     },
     {
       name: "Contact",
       icon: <Mail size={20} />,
-      href: "#contact",
+      href: "/contact",
     },
   ];
 
@@ -68,9 +69,9 @@ function BottomNavbar() {
     >
       {/* Home / Projects / Contact */}
       {navItems.map((item) => (
-        <a
+        <Link
           key={item.name}
-          href={item.href}
+          to={item.href}
           title={item.name}
           className="
             flex
@@ -90,7 +91,7 @@ function BottomNavbar() {
           "
         >
           {item.icon}
-        </a>
+        </Link>
       ))}
 
       {/* Divider */}

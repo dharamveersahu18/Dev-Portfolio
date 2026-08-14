@@ -1,7 +1,7 @@
 import { ArrowUpRight, Mail } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import profile from "../../assets/images/Profile.png";
-
+import { Link } from "react-router-dom";
 function Hero() {
   return (
     <section
@@ -377,8 +377,7 @@ function Hero() {
               />
             </a>
 
-            <a
-              href="#contact"
+           <Link to="/contact" 
               className="
                 flex
                 items-center
@@ -400,9 +399,9 @@ function Hero() {
               "
             >
               Contact Me
-
               <Mail size={17} />
-            </a>
+</Link>
+            
 
           </div>
 
@@ -609,8 +608,7 @@ function Hero() {
 
               <div className="mt-9 flex flex-wrap gap-4">
 
-                <a
-                  href="#projects"
+                <Link to ="/projects"
                   className="
                     group
                     flex
@@ -638,10 +636,9 @@ function Hero() {
                       group-hover:-translate-y-1
                     "
                   />
-                </a>
+                </Link>
 
-                <a
-                  href="#contact"
+                <Link to="/contact"
                   className="
                     flex
                     items-center
@@ -665,7 +662,7 @@ function Hero() {
                   Contact Me
 
                   <Mail size={17} />
-                </a>
+              </Link>
 
               </div>
 

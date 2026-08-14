@@ -1,25 +1,31 @@
-import BottomNavbar from "./components/BottomNavbar/BottomNavbar"
-import Contact from "./components/contact/Contact";
-import Hero from "./components/hero/Hero";
-import About from "./components/about/About"
-import Projects from "./components/projects/Projects"
-import { useState } from "react";
-import Intro from "./components/intro/Intro";
+import { Routes, Route } from "react-router-dom";
+
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import ProjectDetails from "./pages/ProjectsDetails";
+import Projects from "./components/projects/Projects";
+
 function App() {
-  const [showIntro, setShowIntro] = useState(true);
-
   return (
-    <>
-      {showIntro && (
-        <Intro onComplete={() => setShowIntro(false)} />
-      )}
+    <Routes>
 
-      <BottomNavbar />
-      <Hero />
-      <About />
-      <Projects />
-      <Contact />
-    </>
+      {/* Home */}
+      <Route path="/" element={<Home />} />
+
+      {/* About */}
+      <Route path="/about" element={<About />} />
+
+      {/* Contact */}
+      <Route path="/contact" element={<Contact />} />
+
+      {/* Project Details */}
+      <Route
+        path="/projects"
+        element={<ProjectDetails />}
+      />
+
+    </Routes>
   );
 }
 
