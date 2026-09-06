@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useTheme } from "../hooks/useTheme";
 import {
   Home,
   FolderKanban,
   Mail,
   Sun,
   Moon,
+  Terminal,
 } from "lucide-react";
 
 import {
@@ -18,12 +19,7 @@ import {
 import { Link } from "react-router-dom";
 
 function BottomNavbar() {
-  const [darkMode, setDarkMode] = useState(true);
-
-  const toggleTheme = () => {
-    setDarkMode(!darkMode);
-    document.documentElement.classList.toggle("dark");
-  };
+  const { isDark, toggleTheme } = useTheme();
 
   const navItems = [
     {
@@ -121,6 +117,28 @@ function BottomNavbar() {
         <FaGithub size={20} />
       </a>
 
+      {/* Terminal / Command Palette (Ctrl+K) */}
+      <button
+        onClick={() => window.dispatchEvent(new CustomEvent("open-command-palette"))}
+        title="Terminal / Command Menu (Ctrl + K)"
+        className="
+          flex
+          h-11
+          w-11
+          items-center
+          justify-center
+          rounded-full
+
+          text-gray-400
+          transition-all
+
+          hover:bg-white
+          hover:text-black
+        "
+      >
+        <Terminal size={18} />
+      </button>
+
       {/* Theme */}
       <button
         onClick={toggleTheme}
@@ -144,7 +162,7 @@ function BottomNavbar() {
           hover:text-black
         "
       >
-        {darkMode ? <Sun size={20} /> : <Moon size={20} />}
+        {isDark ? <Sun size={20} /> : <Moon size={20} />}
       </button>
     </nav>
   );
