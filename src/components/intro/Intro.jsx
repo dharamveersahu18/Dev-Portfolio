@@ -5,21 +5,10 @@ function Intro({ onComplete }) {
   const [stage, setStage] = useState(0);
 
   useEffect(() => {
-    const timer1 = setTimeout(() => {
-      setStage(1);
-    }, 500);
-
-    const timer2 = setTimeout(() => {
-      setStage(2);
-    }, 1100);
-
-    const timer3 = setTimeout(() => {
-      setStage(3);
-    }, 1800);
-
-    const timer4 = setTimeout(() => {
-      onComplete();
-    }, 2800);
+    const timer1 = setTimeout(() => setStage(1), 350);
+    const timer2 = setTimeout(() => setStage(2), 850);
+    const timer3 = setTimeout(() => setStage(3), 1450);
+    const timer4 = setTimeout(() => onComplete(), 2300);
 
     return () => {
       clearTimeout(timer1);
@@ -29,10 +18,30 @@ function Intro({ onComplete }) {
     };
   }, [onComplete]);
 
+  const progress =
+    stage === 0
+      ? "20%"
+      : stage === 1
+        ? "45%"
+        : stage === 2
+          ? "80%"
+          : "100%";
+
+  const percentage =
+    stage === 0
+      ? "20"
+      : stage === 1
+        ? "45"
+        : stage === 2
+          ? "80"
+          : "100";
+
   return (
     <motion.div
       initial={{ y: 0 }}
-      animate={{ y: stage === 3 ? "-100%" : 0 }}
+      animate={{
+        y: stage === 3 ? "-100%" : "0%",
+      }}
       transition={{
         duration: 0.9,
         ease: [0.76, 0, 0.24, 1],
@@ -49,61 +58,106 @@ function Intro({ onComplete }) {
         text-white
       "
     >
-      <div className="w-full max-w-7xl px-6">
+      {/* Background glow */}
+      <div
+        className="
+          pointer-events-none
+          absolute
+          left-1/2
+          top-1/2
+          h-[500px]
+          w-[500px]
+          -translate-x-1/2
+          -translate-y-1/2
+          rounded-full
+          bg-lime-400/[0.04]
+          blur-[130px]
+        "
+      />
 
-        {/* TOP */}
-        <div className="mb-12 flex items-center justify-between">
+      <div className="relative w-full max-w-7xl px-5 sm:px-8 lg:px-10">
 
-          <p
+        {/* ================= TOP ================= */}
+
+        <div className="mb-10 flex items-center justify-between sm:mb-16">
+
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{
+              opacity: stage >= 1 ? 1 : 0,
+            }}
+            transition={{ duration: 0.5 }}
             className="
-              text-xs
+              text-[9px]
               font-medium
               uppercase
-              tracking-[0.3em]
+              tracking-[0.25em]
               text-gray-500
+              sm:text-xs
+              sm:tracking-[0.3em]
             "
           >
-            Portfolio / 2026
-          </p>
+            Dharamveer Sahu / 2026
+          </motion.p>
 
-          <p
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{
+              opacity: stage >= 1 ? 1 : 0,
+            }}
+            transition={{ duration: 0.5 }}
             className="
-              text-xs
+              text-[10px]
               font-bold
               text-lime-400
+              sm:text-xs
             "
           >
-            01
-          </p>
+            01 / 01
+          </motion.p>
 
         </div>
 
+        {/* ================= MAIN ================= */}
 
-        {/* MAIN */}
         <div className="overflow-hidden">
 
+          {/* ROLE */}
+
           <motion.p
-            initial={{ y: 50, opacity: 0 }}
+            initial={{
+              y: 40,
+              opacity: 0,
+            }}
             animate={{
-              y: stage >= 1 ? 0 : 50,
+              y: stage >= 1 ? 0 : 40,
               opacity: stage >= 1 ? 1 : 0,
             }}
-            transition={{ duration: 0.7 }}
+            transition={{
+              duration: 0.7,
+              ease: [0.76, 0, 0.24, 1],
+            }}
             className="
-              mb-4
-              text-sm
-              font-semibold
+              mb-3
+              text-[10px]
+              font-bold
               uppercase
               tracking-[0.25em]
               text-lime-400
+              sm:mb-5
+              sm:text-sm
             "
           >
-            Hello, I'm
+            Full-Stack Developer
           </motion.p>
 
+          {/* DHARAMVEER */}
 
           <motion.h1
-            initial={{ y: 120, opacity: 0 }}
+            initial={{
+              y: 120,
+              opacity: 0,
+            }}
             animate={{
               y: stage >= 1 ? 0 : 120,
               opacity: stage >= 1 ? 1 : 0,
@@ -113,22 +167,27 @@ function Intro({ onComplete }) {
               ease: [0.76, 0, 0.24, 1],
             }}
             className="
-              text-[16vw]
+              select-none
+              whitespace-nowrap
+              text-[12.5vw]
               font-black
               uppercase
-              leading-[0.8]
-              tracking-[-0.06em]
-
-              sm:text-[13vw]
-              lg:text-[11vw]
+              leading-[0.82]
+              tracking-[-0.045em]
+              sm:text-[12vw]
+              lg:text-[10.5vw]
             "
           >
             DHARAMVEER
           </motion.h1>
 
+          {/* SAHU */}
 
           <motion.h2
-            initial={{ y: 100, opacity: 0 }}
+            initial={{
+              y: 100,
+              opacity: 0,
+            }}
             animate={{
               y: stage >= 2 ? 0 : 100,
               opacity: stage >= 2 ? 1 : 0,
@@ -138,16 +197,18 @@ function Intro({ onComplete }) {
               ease: [0.76, 0, 0.24, 1],
             }}
             className="
-              mt-4
-              text-[16vw]
+              mt-2
+              select-none
+              whitespace-nowrap
+              text-[12.5vw]
               font-black
               uppercase
-              leading-[0.8]
-              tracking-[-0.06em]
+              leading-[0.82]
+              tracking-[-0.045em]
               text-lime-400
-
-              sm:text-[13vw]
-              lg:text-[11vw]
+              sm:mt-4
+              sm:text-[12vw]
+              lg:text-[10.5vw]
             "
           >
             SAHU
@@ -155,72 +216,105 @@ function Intro({ onComplete }) {
 
         </div>
 
+        {/* ================= BOTTOM ================= */}
 
-        {/* BOTTOM */}
-        <div className="mt-14 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+        <div
+          className="
+            mt-10
+            flex
+            flex-col
+            gap-8
+            sm:mt-16
+            sm:flex-row
+            sm:items-end
+            sm:justify-between
+          "
+        >
 
-          <motion.p
-            initial={{ opacity: 0 }}
+          {/* POSITIONING */}
+
+          <motion.div
+            initial={{
+              y: 20,
+              opacity: 0,
+            }}
             animate={{
+              y: stage >= 2 ? 0 : 20,
               opacity: stage >= 2 ? 1 : 0,
             }}
-            transition={{ duration: 0.5 }}
-            className="
-              text-xs
-              font-bold
-              uppercase
-              tracking-[0.2em]
-              text-gray-400
-            "
+            transition={{
+              duration: 0.5,
+            }}
           >
- {/* Content*/}
-          </motion.p>
+            <p
+              className="
+                text-[10px]
+                font-semibold
+                uppercase
+                tracking-[0.18em]
+                text-gray-300
+                sm:text-xs
+              "
+            >
+              Building Web Experiences
+            </p>
 
+            <p
+              className="
+                mt-2
+                text-[10px]
+                font-semibold
+                uppercase
+                tracking-[0.18em]
+                text-gray-500
+                sm:text-xs
+              "
+            >
+              Exploring AI & Real-Time Systems
+            </p>
+          </motion.div>
 
-          {/* PROGRESS */}
+          {/* ================= PROGRESS ================= */}
+
           <div className="w-full max-w-xs">
 
-            <div className="mb-2 flex justify-between text-[10px] uppercase tracking-widest text-gray-500">
-
+            <div
+              className="
+                mb-2
+                flex
+                items-center
+                justify-between
+                text-[9px]
+                font-medium
+                uppercase
+                tracking-[0.2em]
+                text-gray-500
+                sm:text-[10px]
+              "
+            >
               <span>
-                Loading experience
+                Initializing
               </span>
 
-              <span>
-                {stage === 0
-                  ? "01"
-                  : stage === 1
-                  ? "45"
-                  : stage === 2
-                  ? "80"
-                  : "100"}
-                %
+              <span className="text-gray-400">
+                {percentage}%
               </span>
-
             </div>
 
             <div className="h-[2px] w-full bg-white/10">
 
               <motion.div
-                initial={{ width: "0%" }}
+                initial={{
+                  width: "0%",
+                }}
                 animate={{
-                  width:
-                    stage === 0
-                      ? "20%"
-                      : stage === 1
-                      ? "45%"
-                      : stage === 2
-                      ? "80%"
-                      : "100%",
+                  width: progress,
                 }}
                 transition={{
                   duration: 0.6,
                   ease: "easeOut",
                 }}
-                className="
-                  h-full
-                  bg-lime-400
-                "
+                className="h-full bg-lime-400"
               />
 
             </div>
