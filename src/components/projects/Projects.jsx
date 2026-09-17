@@ -1,7 +1,6 @@
 import { useRef, useState, useEffect } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
 
-import NexusPost from "../../assets/clips/NexusPost.mp4";
 import project2 from "../../assets/clips/project2.mp4";
 import project3 from "../../assets/clips/project3.mp4";
 
@@ -13,20 +12,21 @@ function Projects() {
   const [distance, setDistance] = useState(0);
 
   const projects = [
-    {
-      number: "01",
-      title: "NexusPost",
-      description: "A modern blogging platform built with React and Appwrite.",
-      category: "Blog Platform",
-      tech: "React • Appwrite",
-      video: NexusPost,
-      github: "https://github.com/dharamveersahu18/Blog",
-      liveDemo: "#",
-    },
+    // {
+    //   number: "01",
+    //   title: "NexusPost",
+    //   description: "A modern blogging platform built with React and Appwrite.",
+    //   category: "Blog Platform",
+    //   tech: "React • Appwrite",
+    //   video: NexusPost,
+    //   github: "https://github.com/dharamveersahu18/Blog",
+    //   liveDemo: "#",
+    // },
     {
       number: "02",
       title: "Portfolio",
-      description: "A modern developer portfolio focused on clean UI and responsive design.",
+      description:
+        "A modern developer portfolio focused on clean UI and responsive design.",
       category: "Portfolio",
       tech: "React • Tailwind",
       video: project2,
@@ -36,7 +36,8 @@ function Projects() {
     {
       number: "03",
       title: "GameVerse",
-      description: "A gaming platform with an interactive interface and dynamic content.",
+      description:
+        "A gaming platform with an interactive interface and dynamic content.",
       category: "Web Application",
       tech: "React • JavaScript",
       video: project3,
@@ -76,31 +77,34 @@ function Projects() {
       className="relative bg-[#f4f7f0] text-[#172019] transition-colors duration-500 dark:bg-[#0b0d10] dark:text-white"
       style={{ height: `${Math.max(projects.length * 100, 300)}vh` }}
     >
-      <div className="sticky top-0 flex h-screen flex-col overflow-hidden py-6 lg:py-8">
+      <div className="sticky top-0 flex h-screen flex-col justify-between overflow-hidden pt-4 pb-20 sm:pt-6 sm:pb-24 lg:py-8">
         {/* HEADER */}
-        <div className="mx-auto mb-4 w-full max-w-7xl shrink-0 px-6 sm:mb-6 sm:px-8 lg:px-10">
+        <div className="mx-auto w-full max-w-7xl shrink-0 px-6 sm:px-8 lg:px-10">
           <div className="flex items-end justify-between">
             <div>
               <p className="mb-1 text-xs font-medium uppercase tracking-[0.2em] text-green-600 dark:text-lime-400 sm:text-sm">
                 Selected Work
               </p>
-              <h2 className="text-3xl font-bold leading-tight tracking-tight sm:text-4xl lg:text-5xl">
+              <h2 className="text-2xl font-bold leading-tight tracking-tight sm:text-4xl lg:text-5xl">
                 Projects I've{" "}
-                <span className="text-green-600 dark:text-lime-400">built.</span>
+                <span className="text-green-600 dark:text-lime-400">
+                  built.
+                </span>
               </h2>
             </div>
             <p className="hidden max-w-xs text-right text-xs text-gray-500 md:block lg:text-sm dark:text-gray-400">
-              Scroll down to explore my projects and see what I've been building.
+              Scroll down to explore my projects and see what I've been
+              building.
             </p>
           </div>
         </div>
 
         {/* HORIZONTAL TRACK */}
-        <div className="min-h-0 flex-1 overflow-hidden py-2">
+        <div className="min-h-0 flex-1 overflow-hidden flex items-center py-1">
           <motion.div
             ref={trackRef}
             style={{ x }}
-            className="flex h-full items-stretch gap-6 px-6 sm:px-8 lg:gap-8 lg:px-10"
+            className="flex h-fit items-center gap-6 px-6 sm:px-8 lg:gap-8 lg:px-10"
           >
             {projects.map((project) => (
               <ProjectCard key={project.number} project={project} />
@@ -109,7 +113,7 @@ function Projects() {
         </div>
 
         {/* SCROLL INDICATOR */}
-        <div className="mt-2 flex shrink-0 justify-center pb-12 sm:pb-16">
+        <div className="flex shrink-0 justify-center">
           <div className="flex items-center gap-3 text-[10px] tracking-wide text-gray-500 dark:text-gray-400 sm:text-xs">
             <span className="h-px w-8 bg-gray-300 dark:bg-gray-700" />
             SCROLL TO EXPLORE

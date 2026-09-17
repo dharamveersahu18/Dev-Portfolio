@@ -13,17 +13,11 @@ import {
   SiExpress,
   SiAppwrite,
   SiMongodb,
-  SiPostgresql,
-  SiPython,
-  SiLangchain,
-  SiPytorch,
+SiMysql,
   SiGit,
-  SiDocker,
   SiPostman,
   SiCplusplus,
-  SiLinux,
 } from "react-icons/si";
-import { FaJava } from "react-icons/fa";
 
 const STACK_GROUPS = [
   {
@@ -51,33 +45,22 @@ const STACK_GROUPS = [
     category: "DATABASE",
     items: [
       { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
-      { name: "PostgreSQL", icon: SiPostgresql, color: "#4169E1" },
+      { name: "MySQL", icon: SiMysql, color: "#336791" },
     ],
   },
-  {
-    category: "AI / ML",
-    items: [
-      { name: "Python", icon: SiPython, color: "#3776AB" },
-      { name: "LangChain", icon: SiLangchain, color: "#2DD4BF" },
-      { name: "PyTorch", icon: SiPytorch, color: "#EE4C2C" },
-    ],
-  },
+
   {
     category: "TOOLS & CORE",
     items: [
       { name: "Git", icon: SiGit, color: "#F05032" },
-      { name: "Docker", icon: SiDocker, color: "#2496ED" },
       { name: "Postman", icon: SiPostman, color: "#FF6C37" },
       { name: "C++", icon: SiCplusplus, color: "#00599C" },
-      { name: "Java", icon: FaJava, color: "#ED8B00" },
-      { name: "Linux", icon: SiLinux, color: "#FCC624" },
     ],
   },
 ];
 
 // Atmospheric star dots matching the reference screenshot
 const STARS = [
-  { top: "10%", left: "15%", size: "2px", opacity: 0.35 },
   { top: "22%", left: "75%", size: "1.5px", opacity: 0.25 },
   { top: "38%", left: "42%", size: "2px", opacity: 0.4 },
   { top: "54%", left: "12%", size: "1px", opacity: 0.3 },
