@@ -1,50 +1,12 @@
 import { useRef, useState, useEffect } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
-
-import project2 from "../../assets/clips/project2.mp4";
-import project3 from "../../assets/clips/project3.mp4";
-
+import projects from "../data/projects";
 import ProjectCard from "./ProjectCard";
 
 function Projects() {
   const sectionRef = useRef(null);
   const trackRef = useRef(null);
   const [distance, setDistance] = useState(0);
-
-  const projects = [
-    // {
-    //   number: "01",
-    //   title: "NexusPost",
-    //   description: "A modern blogging platform built with React and Appwrite.",
-    //   category: "Blog Platform",
-    //   tech: "React • Appwrite",
-    //   video: NexusPost,
-    //   github: "https://github.com/dharamveersahu18/Blog",
-    //   liveDemo: "#",
-    // },
-    {
-      number: "02",
-      title: "Portfolio",
-      description:
-        "A modern developer portfolio focused on clean UI and responsive design.",
-      category: "Portfolio",
-      tech: "React • Tailwind",
-      video: project2,
-      github: "https://github.com/dharamveersahu18",
-      liveDemo: "#",
-    },
-    {
-      number: "03",
-      title: "GameVerse",
-      description:
-        "A gaming platform with an interactive interface and dynamic content.",
-      category: "Web Application",
-      tech: "React • JavaScript",
-      video: project3,
-      github: "https://github.com/dharamveersahu18",
-      liveDemo: "#",
-    },
-  ];
 
   useEffect(() => {
     const calculateDistance = () => {
@@ -72,7 +34,6 @@ function Projects() {
 
   return (
     <section
-      id="projects"
       ref={sectionRef}
       className="relative bg-[#f4f7f0] text-[#172019] transition-colors duration-500 dark:bg-[#0b0d10] dark:text-white"
       style={{ height: `${Math.max(projects.length * 100, 300)}vh` }}

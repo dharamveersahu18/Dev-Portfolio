@@ -8,8 +8,6 @@ const projects = [
     description:
       "A modern blogging platform built with React and Appwrite.",
 
-    video: "/videos/nexuspost.mp4",
-
     github: "https://github.com/dharamveersahu18/Blog",
 
     liveDemo: "https://your-nexuspost.vercel.app",
@@ -23,8 +21,6 @@ const projects = [
 
     description:
       "An interactive gaming platform with a modern responsive interface.",
-
-    video: "/videos/gameverse.mp4",
 
     github: "https://github.com/dharamveersahu18/tic-tac-toe-react",
 
