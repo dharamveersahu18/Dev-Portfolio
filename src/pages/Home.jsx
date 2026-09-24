@@ -1,4 +1,4 @@
-import BottomNavbar from "../components/BottomNavbar/BottomNavbar";
+// import BottomNavbar from "../components/BottomNavbar/BottomNavbar";
 
 import Contact from "../components/contact/Contact";
 import About from "../components/about/About";
@@ -18,7 +18,7 @@ function Home() {
         <Intro onComplete={() => setShowIntro(false)} />
       )}
 
-      <BottomNavbar />
+      {/* <BottomNavbar /> */}
       <Hero />
       {/* <TechMarquee /> */}
       {/* <Stats /> */}
