@@ -9,7 +9,7 @@ const education = [
     institute:
       "Shri Shankaracharya Institute of Professional Studies, Mujgahan Raipur Chhattisgarh",
     year: "2025 - Present",
-    grade: "Current",
+    grade: "7.2",
     icon: GraduationCap,
   },
 
