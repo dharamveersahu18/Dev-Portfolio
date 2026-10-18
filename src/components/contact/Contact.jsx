@@ -38,6 +38,9 @@ function Contact() {
     }, 800);
   };
   return (
+
+
+
     <section
       id="contact"
       className="
@@ -56,9 +59,10 @@ function Contact() {
         dark:text-white
       "
     >
+ 
       {/* =====================================================
           BACKGROUND
-      ====================================================== */}
+          ====================================================== */}
 
       <div
         className="
@@ -73,6 +77,10 @@ function Contact() {
           blur-[140px]
         "
       />
+
+
+<div className="relative z-10 mx-auto max-w-7xl">
+    
 
       <div
         className="
@@ -90,9 +98,8 @@ function Contact() {
 
       {/* =====================================================
           MAIN
-      ====================================================== */}
+          ====================================================== */}
 
-      <div className="relative z-10 mx-auto max-w-7xl">
 
         {/* ===================================================
             TOP LABEL
@@ -132,19 +139,7 @@ function Contact() {
             "
           >
             Get In Touch
-          </p>
-
-          <p
-            className="
-              text-[10px]
-              font-medium
-              uppercase
-              tracking-[0.2em]
-              text-gray-400
-            "
-          >
-            06 / 06
-          </p>
+          </p>      
         </motion.div>
 
         <div

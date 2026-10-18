@@ -2,3 +2,22 @@
 
 
 @custom-variant dark (&:where(.dark, .dark *));
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  background-color: #f4f7f0;
+  color: #172019;
+  transition:
+    background-color 500ms,
+    color 500ms;
+}
+
+html.dark body {
+  background-color: #0b0d10;
+  color: #fff;
+}

@@ -9,7 +9,7 @@ import MyStack from "../components/stack/MyStack";
 import Projects from "../components/projects/Projects";
 import { useState } from "react";
 
-function Home() {
+function Home({ theme, onToggleTheme }) {
   const [showIntro, setShowIntro] = useState(true);
 
   return (
@@ -18,8 +18,8 @@ function Home() {
         <Intro onComplete={() => setShowIntro(false)} />
       )}
 
-      {/* <BottomNavbar /> */}
-      <Hero />
+      <Hero theme={theme} onToggleTheme={onToggleTheme} />
+
       {/* <TechMarquee /> */}
       {/* <Stats /> */}
       <About />

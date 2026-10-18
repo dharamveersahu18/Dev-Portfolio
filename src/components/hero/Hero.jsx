@@ -1,4 +1,4 @@
-import { ArrowUpRight, Mail } from "lucide-react";
+import { ArrowUpRight, Mail, Moon, Sun } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { FaFileLines } from "react-icons/fa6";
 import profile from "../../assets/images/Profile.png";
@@ -14,8 +14,7 @@ import {
 } from "motion/react";
 
 /* ─── Word Flipper ─── */
-const WORDS = [
-  "AI Experiences",
+const WORDS = [  
   "Web Applications",
   "Scalable Backends",
   "Real-Time Systems",
@@ -46,11 +45,6 @@ function WordFlipper() {
 
 /* ════════════════════════════════════════════════════════════
    DESKTOP HERO
-   ┌──────────────────────────────────────────────┐
-   │  D  H  A  R  A  [PHOTO]  M  V  E  E  R      │  ← giant name
-   │              [NAVBAR]                         │
-   │  [stats]   [headline + CTA]   [traits+desc]  │  ← bottom row
-   └──────────────────────────────────────────────┘
 ════════════════════════════════════════════════════════════ */
 function DesktopHero({ loaded }) {
   const ease = [0.76, 0, 0.24, 1];
@@ -94,7 +88,7 @@ function DesktopHero({ loaded }) {
     "flex-1 text-center font-black uppercase select-none leading-none tracking-tighter " +
     "text-green-600 dark:text-lime-400";
   const letterSize = {
-    fontSize: "clamp(60px, 10.5vw, 175px)",
+    fontSize: "clamp(60px, 11.5vw, 200px)",
     lineHeight: 0.84,
   };
 
@@ -152,7 +146,7 @@ function DesktopHero({ loaded }) {
             loaded ? { opacity: 1, y: 0, scale: 1, filter: "blur(0px)" } : {}
           }
           transition={{ duration: 1.25, ease }}
-          className="relative h-full w-[min(54vw,760px)] max-w-[760px]"
+          className="relative h-full w-[min(48vw,680px)] max-w-[680px]"
           style={{
             y: sy,
             filter: "drop-shadow(0 18px 35px rgba(0,0,0,0.12))",
@@ -162,14 +156,13 @@ function DesktopHero({ loaded }) {
           <motion.img
             src={profile}
             alt="Dharamveer Sahu"
-            className="h-full w-full object-cover object-bottom"
+            className="h-full w-full object-contain object-bottom"
             style={{
               filter: useTransform(
                 blurPx,
                 (v) => `blur(${v}px) saturate(1.05)`,
               ),
               objectPosition: "center bottom",
-              transform: "scale(1.12)",
             }}
             draggable="false"
           />
@@ -208,19 +201,22 @@ function DesktopHero({ loaded }) {
       </div>
 
       {/* ══════════════════════════════════════════
-          LAYER 30 — NAVBAR  (horizontal, like heynesh)
+          LAYER 30 — NAVBAR  
       ══════════════════════════════════════════ */}
       <motion.nav
         initial={{ opacity: 0 }}
         animate={loaded ? { opacity: 1 } : {}}
         transition={{ duration: 0.7, delay: 0.4, ease }}
-        className="absolute inset-x-0 z-30 flex items-center justify-between px-10 xl:px-16"
+        className="absolute inset-x-0 z-30 flex items-center justify-between gap-4 px-10 xl:px-16"
         style={{ top: "50.5%" }}
       >
         {/* Left nav links */}
         <div
-          className="flex items-center gap-6 text-xs font-bold uppercase tracking-[0.18em]
-                        text-[#172019] dark:text-white"
+          className="flex items-center gap-4 rounded-full border border-gray-200/80
+                        bg-white/80 px-5 py-3 text-sm font-extrabold uppercase
+                        tracking-[0.12em] text-[#172019] shadow-lg backdrop-blur-md
+                        dark:border-white/10 dark:bg-[#0b0d10]/80 dark:text-white
+                        xl:gap-6 xl:text-base"
         >
           <a
             href="#home"
@@ -246,8 +242,11 @@ function DesktopHero({ loaded }) {
 
         {/* Right nav links */}
         <div
-          className="flex items-center gap-6 text-xs font-bold uppercase tracking-[0.18em]
-                        text-[#172019] dark:text-white"
+          className="flex items-center gap-4 rounded-full border border-gray-200/80
+                        bg-white/80 px-5 py-3 text-sm font-extrabold uppercase
+                        tracking-[0.12em] text-[#172019] shadow-lg backdrop-blur-md
+                        dark:border-white/10 dark:bg-[#0b0d10]/80 dark:text-white
+                        xl:gap-6 xl:text-base"
         >
           <a
             href="https://github.com/dharamveersahu18"
@@ -298,39 +297,7 @@ function DesktopHero({ loaded }) {
             That's Dharamveer.
           </p>
 
-          <div className="flex flex-col gap-3 mt-auto pt-4">
-            {/* stat 1 */}
-            <div
-              className="w-fit rounded-2xl border border-gray-200 bg-white/80 px-5 py-3
-                            shadow-xl backdrop-blur-md dark:border-white/10 dark:bg-[#181a1f]/90
-                            transition duration-300 hover:-translate-y-1"
-            >
-              <div className="flex items-center gap-3">
-                <span className="text-green-600 dark:text-lime-400 text-2xl font-black leading-none">
-                  ✦
-                </span>
-                <div>
-                  <p className="text-xl font-black leading-none">10+</p>
-                  <p className="text-[9px] font-bold uppercase tracking-wider text-gray-500 mt-0.5">
-                    Projects Built
-                  </p>
-                </div>
-              </div>
-            </div>
-            {/* stat 2 */}
-            <div
-              className="w-fit rounded-2xl border border-gray-200 bg-white/80 px-5 py-3
-                            shadow-xl backdrop-blur-md dark:border-white/10 dark:bg-[#181a1f]/90
-                            transition duration-300 hover:-translate-y-1"
-            >
-              <p className="text-xl font-black leading-none text-green-600 dark:text-lime-400">
-                2+
-              </p>
-              <p className="text-[9px] font-bold uppercase tracking-wider text-gray-500 mt-0.5">
-                Years of Learning
-              </p>
-            </div>
-          </div>
+        
         </div>
 
         {/* ── CENTER COL: headline + CTA ── */}
@@ -342,31 +309,7 @@ function DesktopHero({ loaded }) {
               <WordFlipper />
             </h2>
           </div>
-          <div className="flex flex-wrap gap-3">
-            <Link
-              to="/projects"
-              className="group flex items-center gap-2 rounded-full
-                         bg-gradient-to-r from-lime-400 to-green-500 px-6 py-2.5
-                         font-bold text-black text-sm shadow-lg shadow-lime-500/20
-                         transition duration-300 hover:-translate-y-1 hover:shadow-xl"
-            >
-              Explore Projects
-              <ArrowUpRight
-                size={16}
-                className="transition group-hover:translate-x-1 group-hover:-translate-y-1"
-              />
-            </Link>
-            <Link
-              to="/contact"
-              className="flex items-center gap-2 rounded-full
-                         border border-gray-300 px-6 py-2.5 font-bold text-sm text-gray-700
-                         transition duration-300 hover:-translate-y-1 hover:border-green-500 hover:text-green-600
-                         dark:border-white/10 dark:text-gray-300 dark:hover:border-lime-400 dark:hover:text-lime-400"
-            >
-              Let's Connect
-              <Mail size={14} />
-            </Link>
-          </div>
+         
         </div>
 
         {/* ── RIGHT COL: trait list + description ── */}
@@ -596,15 +539,32 @@ function MobileHero({ loaded }) {
 /* ════════════════════════════════════════════════════════════
    ROOT
 ════════════════════════════════════════════════════════════ */
-function Hero() {
+function Hero({ theme, onToggleTheme }) {
   const [loaded, setLoaded] = useState(false);
+  const isDark = theme === "dark";
   useEffect(() => {
     const t = setTimeout(() => setLoaded(true), 100);
     return () => clearTimeout(t);
   }, []);
 
   return (
-    <section id="home">
+    <section id="home" className="relative">
+      <button
+        type="button"
+        onClick={onToggleTheme}
+        aria-label={`Switch to ${isDark ? "light" : "dark"} theme`}
+        title={`Switch to ${isDark ? "light" : "dark"} theme`}
+        className="absolute right-5 top-4 z-50 inline-flex h-11 items-center gap-2 rounded-full
+                   border border-gray-300 bg-white/90 px-4 text-sm font-semibold text-gray-800
+                   shadow-lg backdrop-blur-md transition hover:-translate-y-0.5 hover:border-green-500
+                   hover:text-green-700 focus-visible:outline-none focus-visible:ring-2
+                   focus-visible:ring-green-500 dark:border-white/15 dark:bg-[#11151b]/90
+                   dark:text-gray-100 dark:hover:border-lime-400 dark:hover:text-lime-300
+                   dark:focus-visible:ring-lime-400"
+      >
+        {isDark ? <Sun size={17} aria-hidden="true" /> : <Moon size={17} aria-hidden="true" />}
+        <span>{isDark ? "Light" : "Dark"} mode</span>
+      </button>
       <MobileHero loaded={loaded} />
       <DesktopHero loaded={loaded} />
     </section>

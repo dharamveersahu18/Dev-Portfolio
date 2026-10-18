@@ -7,7 +7,7 @@ function Contact() {
     <div>
       <BottomNavbar />
 
-      <main>
+      <main className="min-h-screen">
         <ContactSection />
       </main>
     </div>
