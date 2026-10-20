@@ -1,5 +1,6 @@
 import karyaDashboard from "../../assets/images/karya-dashboard.jpg";
 import nexusPostImage from "../../assets/images/nexuspost.png";
+import VideoTube from  "../../assets/images/VideoTube.png";
 
 const projects = [
   {
@@ -33,6 +34,30 @@ const projects = [
     tags: ["React", "Tailwind CSS", "Appwrite", "Redux Toolkit", "JavaScript"],
     github: "https://github.com/dharamveersahu18/Blog",
     liveDemo: "https://nexuspost.web.app/",
+  },
+
+
+  {
+    number: "03",
+    title: "VideoTube — Video Sharing Platform",
+    category: "Full-Stack Web Application",
+    image: VideoTube,
+    description:
+      "A full-stack video-sharing platform with a responsive interface and backend APIs for video-related operations.",
+    highlights: [
+      "Built a React-based frontend with reusable components and responsive layouts.",
+      "Developed backend APIs using Node.js, Express.js, and MongoDB.",
+      "Deployed the frontend on Vercel and configured frontend-backend communication.",
+    ],
+    tags: [
+      "React",
+      "Tailwind CSS",
+      "Node.js",
+      "Express",
+      "MongoDB",
+    ],
+    github: "https://github.com/dharamveersahu18/backend",
+    liveDemo: "https://videotube-frontend-dvs.vercel.app/",
   },
 ];
 
